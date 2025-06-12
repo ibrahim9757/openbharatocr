@@ -1,0 +1,34 @@
+# Kaidoku DNA API – Google Login Integration Update
+
+## What Was Done
+
+### 1. Google Login Integration
+
+- **Frontend (`kaifront-main`)**
+  - Added Google OAuth login using the client ID:  
+    `133426663689-2i05ddo0v7kcqikp29cgka2h1ob25cc8.apps.googleusercontent.com`
+  - Updated `src/main.tsx` to include the Google client ID and ensure API calls target the correct backend port.
+  - Improved the sign-in page (`src/pages/authentication/sign-in-page.tsx`) to handle Google login and display errors clearly.
+
+- **Backend (`kaidoku-main`)**
+  - Updated CORS settings in `main.py` to allow requests from the frontend (`http://localhost:5173`).
+  - Added/updated authentication logic in `app/routes/auth.py` to verify Google ID tokens and handle OAuth login.
+  - Improved security and environment variable handling in `app/core/security.py`.
+  - Ensured the backend creates database tables at startup and exposes a root endpoint with API info.
+
+### 2. Environment & Configuration
+
+- Provided `.env.example` for backend configuration, including database and secret key settings.
+- Documented the need to set up Google OAuth credentials in the Google Cloud Console with the correct authorized origins and redirect URIs.
+
+---
+
+## Summary
+
+- **Google login** is now supported for user authentication.
+- **Frontend and backend** are configured to work together locally.
+- **Security and CORS** settings have been updated for safe and smooth integration.
+
+---
+
+**For setup instructions and more details, see the main project README.**
